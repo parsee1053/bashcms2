@@ -1,0 +1,5 @@
+contents="bashcms2_contents"
+contents_owner="parsee1053"
+wwwdir="/var/www"
+contentsdir="$wwwdir/$contents"
+appdir="$wwwdir/bashcms2"
