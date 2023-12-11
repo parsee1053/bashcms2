@@ -1,5 +1,6 @@
 #!/bin/bash -eux
 source "$(dirname $0)/bin/conf"
+source .env
 
 [ "$USER" = "root" ] # USER MUST BE ROOT
 
@@ -20,7 +21,7 @@ mv "fetch" "fetch_$rnd.cgi"
 ### PULL ARTICLE REPO ###
 rm -rf "${contentsdir:?}"
 cd "$wwwdir"
-git clone "https://github.com/$contents_owner/$contents"
+git clone "https://$contents_owner:$github_personal_access_token@github.com/$contents_owner/$contents.git"
 chown www-data:www-data "$contentsdir" -R
 
 ### INITIALIZE ###
