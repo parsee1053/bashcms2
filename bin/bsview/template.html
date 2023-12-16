@@ -99,14 +99,15 @@ Content-type: text/html
           </div>
           <div class="col-md-4" id="widgets">
             $if(sociallinks)$
-            <h1>Social Links</h1>
+            <aside class="py-3 border-bottom">
+              <h3>Social Links</h3>
+               $for(sociallinks)$
+               <a href="$sociallinks.href$"><i class="fa-brands $sociallinks.icon$ fa-3x"></i></a>
+               $endfor$
+            </aside>
             $endif$
-            $for(sociallinks)$
-            <a href="$sociallinks.href$"><i class="fa-brands $sociallinks.icon$ fa-3x"></i></a>
-            $endfor$
-            <aside id="last-articles"></aside>
-            <br />
-            <aside id="rank-articles"></aside>
+            <aside class="py-3 border-bottom" id="last-articles"></aside>
+            <aside class="py-3" id="rank-articles"></aside>
           </div>
         </div>
         <footer class="pt-3 mt-4 text-body-secondary border-top">
