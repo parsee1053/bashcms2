@@ -14,4 +14,4 @@ head -n "$num"             |
 while read pv d ; do
     sed "s;</a>;($pv views)&<br />;" "$datadir/$d/link"
 done |
-sed '1iContent-Type: text/html\n\n<h3>PV Ranking</h3>'
+sed '1iContent-Type: text/html\n\n'

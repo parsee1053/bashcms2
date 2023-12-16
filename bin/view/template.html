@@ -9,7 +9,6 @@ Content-type: text/html
     <title>$title$ | $sitetitle$</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/e3423f9b27.js" crossorigin="anonymous"></script>
-    <link href="/view/jumbotron.css" rel="stylesheet">
     <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
   </head>
@@ -87,30 +86,41 @@ Content-type: text/html
             <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
             $endif$
             $body$
-            <div class="card" id="article-info">
+            <div class="card mb-3" id="article-info">
               <h4 class="card-header">Article Info</h4>
-              <p style="padding: 5px;">created: $created_time$<br />
-                modified: $modified_time$<br />
-                views: $views$<br />
-                keywords: <span id="keywords">$Keywords$</span><br />
-                $nav$
-              </p>
+              <div class="card-body">
+                <ul class="list-unstyled mb-0 small">
+                  <li>created: $created_time$</li>
+                  <li>modified: $modified_time$</li>
+                  <li>views: $views$</li>
+                  <li>keywords: <span id="keywords">$Keywords$</span></li>
+                </ul>
+              </div>
             </div>
+            <p class="small">$nav$</p>
           </div>
           <div class="col-md-4" id="widgets">
             $if(sociallinks)$
             <aside class="py-3 border-bottom">
               <h3>Social Links</h3>
-               $for(sociallinks)$
-               <a href="$sociallinks.href$"><i class="fa-brands $sociallinks.icon$ fa-3x"></i></a>
-               $endfor$
+              <div class="small">
+                $for(sociallinks)$
+                <a href="$sociallinks.href$"><i class="fa-brands $sociallinks.icon$ fa-3x"></i></a>
+                $endfor$
+              </div>
             </aside>
             $endif$
-            <aside class="py-3 border-bottom" id="last-articles"></aside>
-            <aside class="py-3" id="rank-articles"></aside>
+            <aside class="py-3 border-bottom">
+              <h3>Recent posts</h3>
+              <div class="small" id="last-articles">loading...</div>
+            </aside>
+            <aside class="py-3">
+              <h3>PV Ranking</h3>
+              <div class="small" id="rank-articles">loading...</div>
+            </aside>
           </div>
         </div>
-        <footer class="text-center pt-3 mt-4 text-body-secondary border-top">
+        <footer class="text-center pt-3 mt-4 text-body-secondary border-top small">
           $Copyright$
         </footer>
       </div> <!-- /container -->

@@ -5,7 +5,7 @@ exec 2> "$logdir/$(basename $0).$(date +%Y%m%d_%H%M%S).$$"
 num=$(tr -dc '0-9' <<< ${QUERY_STRING})
 [ -z "$num" ] && num = 10
 
-echo -e 'Content-Type: text/html\n\n<h3>Recent posts</h3>'
+echo -e 'Content-Type: text/html\n\n'
 tac "$datadir/post_list"             |
 head -n "$num"                       |
 awk '{print $3}'                     |
