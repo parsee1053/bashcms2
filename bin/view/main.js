@@ -29,7 +29,7 @@ function fullSearch() {
     return;
   }
   document.body.style.cursor = "wait";
-  const url = "/bsview/full_search.cgi?word=" + encodeURIComponent(word);
+  const url = "/full_search.cgi?word=" + encodeURIComponent(word);
   fetch(url, { method: "GET" })
     .then(response => response.text())
     .then((text) => {

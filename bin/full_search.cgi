@@ -8,9 +8,7 @@ numchar=$(nkf -w16B0 <<< "$word" | xxd -plain | tr -d '\n' | sed 's/..../\&#x&;/
 cat << FIN
 Content-Type: text/html
 
-<h1>Search</h1>
-<input type="text" id="full-search-box" value="$numchar" />
-<button onclick="fullSearch(document.getElementById('full-search-box').value)">Search</button><br />
+<h2>検索結果: $numchar</h2>
 FIN
 
 [ -n "$word" ] &&
