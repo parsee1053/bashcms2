@@ -33,3 +33,27 @@ a:hover {
   background-color: var(--bs-secondary-text-emphasis);
   border-color: var(--bs-dark-text-emphasis);
 }
+
+.dropdown-menu {
+  background-color: var(--bs-gray-900);
+  border-color: var(--bs-dark-text-emphasis);
+}
+
+.dropdown-item {
+  color: var(--bs-gray-500);
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: var(--bs-secondary-text-emphasis);
+  color: var(--bs-gray-500);
+}
+
+.form-control, .form-control:focus {
+  background-color: var(--bs-gray-900);
+  border-color: var(--bs-dark-text-emphasis);
+  color: var(--bs-gray-500);
+}
+
+.form-control::placeholder {
+  color: var(--bs-dark-text-emphasis);
+}
