@@ -99,7 +99,7 @@ Content-type: text/html
               <h3>Social Links</h3>
               <div class="small">
                 $for(sociallinks)$
-                <a href="$sociallinks.href$"><i class="fa-brands $sociallinks.icon$ fa-3x"></i></a>
+                <a href="$sociallinks.href$" aria-label="$sociallinks.aria-label$"><i class="fa-brands $sociallinks.icon$ fa-3x"></i></a>
                 $endfor$
               </div>
             </aside>
