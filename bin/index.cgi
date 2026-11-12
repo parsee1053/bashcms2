@@ -30,7 +30,7 @@ page: $(sed -e 's;^;/?;' -e 's;s/;=;' <<< $dir)
 FIN
 
 ### OUTPUT ###
-pandoc --template="$viewdir/template.html" \
+pandoc --template="$viewdir/template.html" --wrap=none \
   -f markdown_github+yaml_metadata_block "$md" "$tmp-meta.yaml" | 
 sed -r "/:\/\/|=\"\//!s;<(img src|a href)=\";&/$dir/;"          |
 sed "s;/$dir/#;#;g"                                             |
